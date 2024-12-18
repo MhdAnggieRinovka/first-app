@@ -1,0 +1,17 @@
+<p>post-list works!</p>
+<h3>{{postTitle}} (Ini dari Post List)</h3>
+<!-- <h2 *ngIf="postLogin">Sudah Login</h2>
+<h2 *ngIf="!postLogin">Tidak Login</h2> -->
+@switch (postLogin) 
+{
+    @case (true)
+     {
+        <!-- <h2 [style.color]="'green'" [style.textTransform]="'capitalize'">Sudah Login</h2> -->
+        <h2 [class.login]="postLogin" >Sudah Login</h2>
+     }
+     @default {
+        <!-- <h2 [style.color]="'red'" [style.textTransform]="'lowercase'">Tidak Login</h2> -->
+        <h2 [class.logout]="!postLogin" >Tidak Login</h2>
+     }
+}
+<button (click)="sendMessage()">Send Message to Parent</button>

@@ -17,3 +17,12 @@
     background-color: red;
     border: 1pk solid green;
 }
+
+.login{
+    color: green;
+    text-transform: uppercase ;
+}
+.logout{
+    color: red;
+    text-transform: lowercase ;
+}

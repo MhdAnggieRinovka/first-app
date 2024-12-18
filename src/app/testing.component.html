@@ -1,0 +1,224 @@
+
+<!-- <h2>{{title | uppercase}}</h2>
+<app-header></app-header>
+<app-navbar></app-navbar>
+<button disabled="{{isDisabled}}" >Using String Interpolation</button>
+<p></p> -->
+<!-- Recomended using this one -->
+<!-- <button [disabled]="isDisabled">Using Property Binding</button>
+<p></p>
+<button [class.active]="isActive" 
+        [class.no-active]="!isActive"
+        [class.active-border]="isActive"
+        [class.no-active-border]="!isActive"
+>click Me</button>
+
+<button [class.banana]="fruit == 'banana' ">Apple</button>
+<button [style.background]="isActive?'purple' : 'blue' ">Testing</button>
+<p></p>
+<button (mouseover)="buttonClick()">{{fruit}}</button> -->
+<!-- <input type="text" (keyup)="keyEnter($event)"> -->
+<!-- // trigger this when enter key -->
+<!-- <input type="text" (keyup.enter)="keyFiltering(user)" #user id="userInput"> -->
+<!-- <p></p>
+<input type="text" [value]="title"> -->
+<!-- <input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)"> -->
+
+<!-- NgModel bisa mengubah data yang ada di kelas componentTs secara langsung tanpa pakai method untuk triggernya -->
+ <!-- <input type="text" [(ngModel)]="userName"> -->
+
+ <!-- <h3>{{userName}}</h3> -->
+
+ <!-- Oldway -->
+  <!-- Perlu import NgIf sehingga memakan waktu -->
+  <!-- <h3 *ngIf="isLogin">{{userName}}</h3> -->
+<!-- new Way -->
+ <!-- @if (isLogin) 
+ {
+    <h3>{{userName}}</h3>
+ }
+@else
+{
+        <h3>Lu gk login !!</h3>
+} -->
+
+ <!-- Oldway -->
+  <!-- Bisa pakai ng-template -->
+  <!-- <h3 *ngIf="isLogin; else message ">{{userName}}</h3>
+
+  <ng-template #message>Lu gak login !!</ng-template> -->
+<!-- 
+  @if(isGuest)
+  {
+        <h1>Hi {{userName}}</h1>
+  }
+
+  <button (click)="countLoginAttempts()">Log In</button>
+  <h4 *ngIf="loginCount > 3">Sorry must wait 30 minutes</h4>
+
+  <h3 *ngIf="role === 'admin' ; member">{{userName}}</h3>
+
+  <ng-template #member>Welcome member</ng-template>
+
+  @if(role === 'admin')
+  {
+    <h3>Welcome Admin</h3>
+  }
+  @else{
+    <h3>Welcome Member</h3>
+  } -->
+
+<!-- 
+  agar masuk template ke dalam div pakai ngtemplateoutlate -->
+  <!-- <ng-template #callToAction>
+    <button>Login</button>
+  </ng-template>
+
+  <div [ngTemplateOutlet]="callToAction">
+    <h5>Side bar</h5>
+  </div>
+  <div [ngTemplateOutlet]="callToAction">
+    <h5>Hero</h5>
+  </div>
+  <div [ngTemplateOutlet]="callToAction">
+    <h5>footer</h5>
+  </div> -->
+
+
+  <!-- Lopping -->
+
+  <!-- <h3>{{users[0]}}</h3>
+  <h3>{{users[1]}}</h3>
+  <h3>{{users[2]}}</h3> -->
+
+  <!-- <div *ngFor="let user for users">
+        <h2>{{user}}</h2>
+  </div> -->
+<!-- <h3>{{users}}</h3>
+  <h3 *ngFor="let user of users">{{ user }}</h3>
+
+  @for(user of users; track user)
+  {
+    <h3>{{user}} Loaded 1 by 1</h3>
+  } -->
+
+  <!-- kenapa gak ditaro di Ul, karena ngFor ini bertujuan untuk 
+  melooping element yang ingin di looping misalkan jikalau ingin loop li maka masukan ke li -->
+<!-- <ul>
+    <li *ngFor="let user of userObj; let i = index">{{i}} {{user.name}} <button (click)="deleteUserPerIndex(i)">Delete</button></li>
+</ul> -->
+
+  <!-- @for(user of users; track user)
+  {
+    <li>{{user}} Loaded 1 by 1</li>
+  }  -->
+    <!-- <input type="text" (keyup.Enter)="masukData($event)">
+  @for(user of userObj; track user)
+  {
+    <li>{{user.id}} {{user.name}} <button (click)="deleteUser(user)">Delete</button></li>
+    
+  } -->
+
+  <!-- Change Detection (Add new data)-->
+  <!-- <button (click)="addNewUser()">Add New User</button> -->
+
+  <!-- <div [ngSwitch]="role">
+    <h2 *ngSwitchCase="'admin'">Welcome Admin</h2>
+    <h2 *ngSwitchCase="'member'">Welcome Member</h2>
+    <h2 *ngSwitchDefault="'member'">Welcome Guest</h2>
+  </div> -->
+
+
+<!-- @switch (role) 
+{
+  @case ('admin') 
+  {
+      <h2 [style.color]="isLogin?'green' : 'red'" [style.textTransform]="isLogin?'uppercase': 'lowercase'">Welcome Admin</h2>
+  }
+  @case ('member') 
+  {
+    <h2 [style.color]="isLogin?'green' : 'red'" [style.textTransform]="isLogin?'uppercase': 'lowercase'">Welcome Member</h2>
+  }
+  @default {
+    <h2>Guest</h2>
+  }
+} -->
+<!-- 
+<h1 [ngStyle]="{'color':isLogin ? 'green' : 'red' }">Ng Style Direction</h1>
+
+<input type="text" [(ngModel)]="newUser">
+<button (click)="masukData(newUser)">Daftar User</button> -->
+
+   <!-- <div class="container">
+    <div class="card m-5 p-3">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th colspan="2">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of userObj; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{ user.name }}</td>
+                    <td><button (click)="deleteUserPerIndex(user.id)">Delete</button> </td>
+                    <td><button>Edit</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div> -->
+
+<!-- <ng-template #noData>
+  <p>No users to display</p>
+</ng-template> -->
+<!-- <ng-template #newData>
+  <p>New users has been input</p>
+</ng-template> -->
+
+<!-- Tidak bisa dipakai ngIf ke dalam looping karena ngFor ini kalau datanya gak ada dia gak akan jalan -->
+<!-- <div *ngIf="userObj.length > 0 ; else noData">
+</div> -->
+<!-- <div *ngIf="userObj.length === 0">
+  <p>No users to display</p>
+</div> -->
+<!-- <div class="container">
+  <div class="card m-5 p-3">
+      <div class="card-body">
+          <table class="table table-bordered table-striped table-hover">
+              <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for( user of userObj; track user ; let i = $index ; let totalUser = $count; let first = $odd)
+              {
+                <tr>
+                  <td>{{first}} - {{i+1}}</td>
+                  <td>{{ user.name }}</td>
+                  <td><button (click)="deleteUser(user.id)">Delete</button> </td>
+                  <td><button>Edit</button></td>
+                </tr>
+              } -->
+              <!-- penggunaan empty harus berdekatan dengan penggunaan for -->
+              <!-- @empty {
+                <p>No users to display</p>
+              } -->
+              <!-- </tbody>
+          </table>
+      </div>
+  </div>
+</div> -->
+
+<!-- <h1 [class.Login]="isLogin">Class Binding</h1> -->
+<!-- <h1 [class]="{
+  'login': isLogin,
+  'logout': !isLogin
+}">Class Binding</h1> -->
