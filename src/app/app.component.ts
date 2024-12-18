@@ -18,7 +18,8 @@ export class AppComponent {
   isDisabled : boolean = true;
   isActive: boolean = true;
   fruit: string ='apple';
-  isLogin: boolean =true;
+  isLogin: boolean =false;
+  isGuest: boolean = false;
 
   userName: string ='Babi';
 
@@ -42,5 +43,10 @@ export class AppComponent {
   {
     this.userName = username.value;
     console.log(this.userName)
+  }
+  loginCount: number = 0;
+  countLoginAttempts()
+  {
+    this.loginCount++;
   }
 }

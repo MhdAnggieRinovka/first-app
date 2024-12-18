@@ -1,11 +1,11 @@
-Hii
-<h2>{{title | uppercase}}</h2>
+
+<!-- <h2>{{title | uppercase}}</h2>
 <app-header></app-header>
 <app-navbar></app-navbar>
 <button disabled="{{isDisabled}}" >Using String Interpolation</button>
-<p></p>
+<p></p> -->
 <!-- Recomended using this one -->
-<button [disabled]="isDisabled">Using Property Binding</button>
+<!-- <button [disabled]="isDisabled">Using Property Binding</button>
 <p></p>
 <button [class.active]="isActive" 
         [class.no-active]="!isActive"
@@ -16,23 +16,42 @@ Hii
 <button [class.banana]="fruit == 'banana' ">Apple</button>
 <button [style.background]="isActive?'purple' : 'blue' ">Testing</button>
 <p></p>
-<button (mouseover)="buttonClick()">{{fruit}}</button>
+<button (mouseover)="buttonClick()">{{fruit}}</button> -->
 <!-- <input type="text" (keyup)="keyEnter($event)"> -->
 <!-- // trigger this when enter key -->
 <!-- <input type="text" (keyup.enter)="keyFiltering(user)" #user id="userInput"> -->
-<p></p>
-<input type="text" [value]="title">
+<!-- <p></p>
+<input type="text" [value]="title"> -->
 <!-- <input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)"> -->
 
 <!-- NgModel bisa mengubah data yang ada di kelas componentTs secara langsung tanpa pakai method untuk triggernya -->
- <input type="text" [(ngModel)]="userName">
+ <!-- <input type="text" [(ngModel)]="userName"> -->
 
  <!-- <h3>{{userName}}</h3> -->
 
  <!-- Oldway -->
-  <h3 *ngIf="isLogin">{{userName}}</h3>
+  <!-- Perlu import NgIf sehingga memakan waktu -->
+  <!-- <h3 *ngIf="isLogin">{{userName}}</h3> -->
 <!-- new Way -->
- @if (isLogin) 
+ <!-- @if (isLogin) 
  {
     <h3>{{userName}}</h3>
  }
+@else
+{
+        <h3>Lu gk login !!</h3>
+} -->
+
+ <!-- Oldway -->
+  <!-- Bisa pakai ng-template -->
+  <!-- <h3 *ngIf="isLogin; else message ">{{userName}}</h3>
+
+  <ng-template #message>Lu gak login !!</ng-template> -->
+
+  @if(isGuest)
+  {
+        <h1>Hi {{userName}}</h1>
+  }
+
+  <button (click)="countLoginAttempts()">Log In</button>
+  <h4 *ngIf="loginCount > 3">Sorry must wait 30 minutes</h4>
