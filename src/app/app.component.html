@@ -1,7 +1,16 @@
-<h2>{{appPostTitle}} (Ini dari App Component)</h2>
+<!-- <h2>{{appPostTitle}} (Ini dari App Component)</h2>
 <h1>{{postChildMessage}}</h1>
 <h1>{{postChildCount}}</h1>
 <h2 [style.color]="'blue'">{{messageFromChild}}</h2>
 <app-header></app-header>
 <app-navbar></app-navbar>
-<app-post-list [postTitle]="appPostTitle" [postLogin]="isLogin" (MessageEvent)="receiveMessage($event)"></app-post-list>
+<app-post-list [postTitle]="appPostTitle" [postLogin]="isLogin" (MessageEvent)="receiveMessage($event)"></app-post-list> -->
+
+<app-post-list></app-post-list>
+<app-card>
+    <!-- Ini untuk passing content ke card component pakai ng content di card.component.html -->
+    <h2>John Doe</h2>
+    <p>01/12/2024</p>
+    Lorem ipsum dolor sit amet 
+    consectetur adipisicing elit. Magnam, pariatur.
+</app-card>

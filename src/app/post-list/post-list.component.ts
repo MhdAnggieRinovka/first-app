@@ -1,10 +1,11 @@
 import { NgClass, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-post-list',
-  imports: [NgIf, FormsModule,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass],
+  imports: [NgIf, FormsModule,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass,CardComponent],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.css'
 })

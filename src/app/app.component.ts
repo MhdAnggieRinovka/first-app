@@ -7,12 +7,13 @@ import { NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTempla
 import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common'
 import { PostListComponent } from './post-list/post-list.component';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent,HeaderComponent, UpperCasePipe,
             FormsModule, NgIf,NgTemplateOutlet,NgFor,NgSwitch,NgSwitchCase,NgSwitchDefault,
-            NgStyle, PostListComponent],
+            NgStyle, PostListComponent,CardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -88,7 +89,6 @@ export class AppComponent implements AfterViewInit{
   // }
   appPostTitle : string = "Post";
   @ViewChild(PostListComponent) appChildMessage :any;
-  // @ViewChild(PostListComponent) appPostCount :any;
   postChildMessage : string ="";
   postChildCount : number =0;
   messageFromChild :string="";
