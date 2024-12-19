@@ -1,2 +1,6 @@
-<p>card works!</p>
-<ng-content></ng-content>
+<div class="card">
+    <!-- Jikalau ada 2 ng-content yang gakal ke isi itu di ng-content yang terakhir -->
+    <header><ng-content select='[header]'></ng-content></header>
+    <div class="body"><ng-content select='[body]'></ng-content></div>
+    <footer ><ng-content select="[footer]"></ng-content></footer>
+</div>

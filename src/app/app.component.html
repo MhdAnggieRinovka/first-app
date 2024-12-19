@@ -5,12 +5,40 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
 <app-post-list [postTitle]="appPostTitle" [postLogin]="isLogin" (MessageEvent)="receiveMessage($event)"></app-post-list> -->
+<!-- <app-post-list>
+</app-post-list>
+<div *ngComponentOutlet="loadComponent()"></div> -->
 
-<app-post-list></app-post-list>
-<app-card>
-    <!-- Ini untuk passing content ke card component pakai ng content di card.component.html -->
-    <h2>John Doe</h2>
-    <p>01/12/2024</p>
-    Lorem ipsum dolor sit amet 
-    consectetur adipisicing elit. Magnam, pariatur.
-</app-card>
+<!-- DIbawah ini untuk passing content ke card component pakai ng content di card.component.html -->
+<!-- <app-card>
+     <span header>username</span>
+    <h1 body>John Doe</h1>
+    <h3 footer>12/19/2024</h3>
+     </app-card> -->
+<!-- <app-profile [updateName]="appNama"></app-profile> -->
+<!-- <button (click) ="loadComponent()">Click Me</button>
+<button (click) ="removeComponent()">Remove Container</button> -->
+<!-- <button (click)="changeUser()">Klik Ubah Nama</button>
+<button (click)="loadComponent()">Load Profile</button>
+
+<button (click)="removeComponent()">Remove Profile</button> -->
+
+<!-- <h1>{{title|uppercase}}</h1>
+<h1>{{title|lowercase}}</h1>
+<h1>{{title|titlecase}}</h1>
+<h1>{{75445.80 | number}}</h1>
+<h1>{{0.46 | percent}}</h1>
+<h1>{{1000 | currency : 'IDR' : 'symbol'}}</h1>
+<h1>{{day | date : 'dd-MMM-yyyy'}}</h1>
+<h1>{{day | date : 'short'}} - Short</h1>
+<h1>{{day | date : 'medium'}} - Medium</h1>
+<h1>{{day | date : 'long'}} - Long</h1>
+<h1>{{day | date : 'full'}} - Full</h1>
+<h1>{{day | date : 'hh:mm:ss a'}} - Waktu</h1>
+<h1>{{day | date : 'HH:mm:ss a'}} - Waktu</h1> -->
+<!-- <button (click)="uppercase()">Upper Case The Title</button> -->
+ <h3>{{user}}</h3>
+ <h3>{{user | json}}</h3>
+ <button (click) = "convertToJson()">Convert ke Json</button>
+
+ <h1>{{'Angular Ampoonn Sekali' | slice : 7 : 16}}</h1>
